@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import sounddevice as sd
 import tensorflow as tf
 
-DURACAO_GRAVACAO = 60  # Duração da gravação em segundos
+DURACAO_GRAVACAO = 5  # Duração da gravação em segundos
 
 print("Iniciando...")
 
@@ -67,10 +67,10 @@ def main(output_segments_dir, output_spectrograms_dir):
         extract_spectrograms(segmento, output_spectrograms_dir)
 
 # Carregar o modelo CNN
-model = tf.keras.models.load_model('/home/machine/code/EmissorReceptor/meu_modelo.h5')
+model = tf.keras.models.load_model('/home/machine/EmissorReceptor/meu_modelo.h5')
 
-output_segments_dir = '/home/machine/code/EmissorReceptor/trechos'
-output_spectrograms_dir = '/home/machine/code/EmissorReceptor/espectogramas'
+output_segments_dir = '/home/machine/EmissorReceptor/trechos'
+output_spectrograms_dir = '/home/machine/EmissorReceptor/espectogramas'
 
 main(output_segments_dir, output_spectrograms_dir)
 

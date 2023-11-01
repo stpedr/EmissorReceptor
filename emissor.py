@@ -3,8 +3,8 @@ import sounddevice as sd
 import time
 import random
 
-DURACAO_SINAL = 1800.0  # Duração do sinal em segundos
-FREQUENCIAS = [10000]  # Frequências das senoides em Hz
+DURACAO_SINAL = 10.0  # Duração do sinal em segundos
+FREQUENCIAS = [5000]  # Frequências das senoides em Hz
 TAXA_AMOSTRAGEM = 44100  # Taxa de amostragem em Hz
 TEMPO_TOTAL = 90.0  # Duração total em segundos (1,5 minutos)
 
@@ -23,7 +23,7 @@ def toca_aleatoriamente():
         time.sleep(DURACAO_SINAL)
     return frequencias_tocadas
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     frequencias = toca_aleatoriamente()
     print("Frequências tocadas em ordem:")
     for freq in frequencias:
