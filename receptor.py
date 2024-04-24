@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import sounddevice as sd
 import tensorflow as tf
 
-DURACAO_GRAVACAO = 5  # Duração da gravação em segundos
+DURACAO_GRAVACAO = 5  
 
 print("Iniciando...")
 
@@ -60,13 +60,12 @@ def carregar_transformada_fourier_direto(diretorio):
     return np.array(transformadas)
 
 def main(output_segments_dir, output_spectrograms_dir):
-    # Gravação do áudio
     y, sr = gravar_audio()
     segmentos = dividir_audio_em_trechos(y, sr, diretorio_saida=output_segments_dir)
     for segmento in segmentos:
         extract_spectrograms(segmento, output_spectrograms_dir)
 
-# Carregar o modelo CNN
+
 model = tf.keras.models.load_model('/home/machine/EmissorReceptor/meu_modelo.h5')
 
 output_segments_dir = '/home/machine/EmissorReceptor/trechos'
