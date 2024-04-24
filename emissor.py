@@ -3,10 +3,10 @@ import sounddevice as sd
 import time
 import random
 
-DURACAO_SINAL = 10.0  # Duração do sinal em segundos
-FREQUENCIAS = [5000]  # Frequências das senoides em Hz
-TAXA_AMOSTRAGEM = 44100  # Taxa de amostragem em Hz
-TEMPO_TOTAL = 90.0  # Duração total em segundos (1,5 minutos)
+DURACAO_SINAL = 10.0  
+FREQUENCIAS = [5000] 
+TAXA_AMOSTRAGEM = 44100 
+TEMPO_TOTAL = 90.0  
 
 def gera_senoide(frequencia, duracao=DURACAO_SINAL, taxa_amostragem=TAXA_AMOSTRAGEM):
     t = np.linspace(0, duracao, int(taxa_amostragem * duracao), endpoint=False)
