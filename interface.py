@@ -32,24 +32,18 @@ def show_image(image_path):
     photo = ImageTk.PhotoImage(image)
     
     img_label = tk.Label(root, image=photo)
-    img_label.image = photo  # Mantenha uma referência para evitar que seja coletado como lixo
+    img_label.image = photo 
     img_label.pack(pady=20)
 
-# Criando a janela principal
 root = tk.Tk()
 root.title("DETECTOR DE FREQUENCIA")
 
-# Criando e posicionando o botão "Emissor"
 btn_emissor = tk.Button(root, text="Emissor", command=emissor)
 btn_emissor.pack(pady=20)
-
-# Criando e posicionando o botão "Receptor"
 btn_receptor = tk.Button(root, text="Receptor", command=receptor)
 btn_receptor.pack(pady=20)
 
-# Criando e posicionando o widget de texto para exibir o log
 log_text = tk.Text(root, wrap=tk.WORD, width=50, height=10)
 log_text.pack(pady=20)
 
-# Iniciando o loop principal da janela
 root.mainloop()
